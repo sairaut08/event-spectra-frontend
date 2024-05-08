@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { FaRobot } from 'react-icons/fa6';
-import { useNavigate } from 'react-router-dom'; // Importing useNavigate from react-router-dom
+import {FaRobot} from 'react-icons/fa6';
+import Chatbot from '../../../Pages/ChatBot/Chatbot.jsx';
 
 const Hero = () => {
   const [showChatbot, setShowChatbot] = useState(false);
-  const navigate = useNavigate(); // Initializing useNavigate hook
 
   const toggleChatbot = () => {
     setShowChatbot(!showChatbot);
@@ -27,30 +26,27 @@ const Hero = () => {
           <p className='max-w-[600px] drop-shadow-2xl py-2 text-xl'>
             Unleashing Talent, Celebrating Diversity: Join Us in Eventful Journeys!
           </p>
+         
+<button
+  onClick={toggleChatbot}
+  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-7xl mr-8'
+  style={{ position: 'fixed', bottom: '20px', right: '20px' }}
+>
+  <FaRobot className='w-full'/>
+</button>
 
-          <button
-            onClick={toggleChatbot}
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-7xl mr-8'
-            style={{ position: 'fixed', bottom: '20px', right: '20px' }}
-          >
-            <FaRobot className='w-full'/>
-          </button>
-
-          {showChatbot && (
-            <div
-              style={{
-                position: 'fixed',
-                bottom: '60px',
-                right: '20px',
-                zIndex: '9998', 
-              }}
-            >
-              {/* Use of navigate instead of hardcoding URL */}
-              <button onClick={() => navigate("/chatBot")}>Chat Bot</button>
-            </div>
-          )}
+<p>{showChatbot ? (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '60px',
+            right: '20px',
+            zIndex: '9998', 
+          }}
+        ><Chatbot/></div>):""}</p>
         </div>
       </div>
+      
     </div>
   );
 };

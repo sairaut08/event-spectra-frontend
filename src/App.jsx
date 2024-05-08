@@ -21,7 +21,7 @@ import StudentCompanyRegister from './Pages/StudentCompanyRegister'
 import CompanyList from './Pages/Companies/CompanyList'
 import CompanyDescription from './Pages/Companies/CompanyDescription'
 import StudentList from './Pages/StudentList'
-
+import Chatbot from './Pages/ChatBot/Chatbot'
 
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
             <Route path='/user/profile' element={ <ProfilePage/>} />
             <Route path='/user/edit-profile' element={ <EditProfile/>} />
         </Route>
-
+        <Route path='/chatBot' element={<Chatbot/>} />
 
         <Route path='*' element={<NotFound/> } />
         

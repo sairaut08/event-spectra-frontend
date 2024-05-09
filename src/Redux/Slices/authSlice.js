@@ -85,7 +85,7 @@ export const updateProfile = createAsyncThunk('/auth/user/update', async (data) 
 
         return (await res).data
     } catch (error) {
-        toast.error(error?.response?.data?.message)
+        //toast.error(error?.response?.data?.message)
     }
 })
 
@@ -101,7 +101,7 @@ export const getProfile = createAsyncThunk('/auth/getProfile', async () => {
             // this return becomes action.payload
         return await response
     } catch (error) {
-        toast.error(error?.response?.data?.message)
+        //toast.error(error?.response?.data?.message)
     }
 })
 
